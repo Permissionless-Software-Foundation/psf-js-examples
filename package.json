@@ -1,0 +1,22 @@
+{
+  "name": "psf-js-examples",
+  "version": "1.0.0",
+  "description": "A collection of JavaScript code examples using PSF software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Permissionless-Software-Foundation/psf-js-examples.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Permissionless-Software-Foundation/psf-js-examples/issues"
+  },
+  "homepage": "https://github.com/Permissionless-Software-Foundation/psf-js-examples#readme",
+  "dependencies": {
+    "minimal-slp-wallet": "5.5.3"
+  }
+}
