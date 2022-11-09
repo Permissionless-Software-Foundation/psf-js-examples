@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Permissionless-Software-Foundation/psf-js-examples#readme",
   "dependencies": {
+    "minimal-ecash-wallet": "1.1.6",
     "minimal-slp-wallet": "5.5.3"
   }
 }
