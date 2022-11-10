@@ -2,7 +2,7 @@
 
 [minimal-ecash-wallet](https://www.npmjs.com/package/minimal-ecash-wallet) is a minimalist eCash (XEC) wallet 'engine' for use with both front end web apps and back end APIs. It contains all the core functionality needed by a wallet:
 
-- Create a new BCH wallet, import a mnemonic, or import a private key (WIF)
+- Create a new XEC wallet, import a mnemonic, or import a private key (WIF)
 - Encrypt a wallets mnemonic for safe storage
 - Send and receive eCash
 - Send and receive eTokens
@@ -22,6 +22,6 @@ You can run each example script by entering its directory and running the JavaSc
 If you need to install node.js on your linux system, [here are the commands](https://gist.github.com/christroutner/a39f656850dc022b60f25c9663dd1cdd#install-nodejs).
 
 If you are trying to start from the first time, here is the recommended path to take when running examples:
-- [create-wallet](./create-wallet) to create a wallet. Send it a few cents of BCH to enable the other examples.
-- [get-balance](./get-balance) to show the balance of the BCH in the wallet you just created and funded.
-- [send-bch](./send-bch) makes an on-chain transaction by sending BCH from the wallet you created in the first example, back to itself. It generates a TXID that you can browse in a block explorer.
+- [create-wallet](./create-wallet) to create a wallet. Send it a few cents of XEC to enable the other examples.
+- [get-balance](./get-balance) to show the balance of the XEC in the wallet you just created and funded.
+- [send-ecash](./send-ecash) makes an on-chain transaction by sending XEC from the wallet you created in the first example, back to itself. It generates a TXID that you can browse in a block explorer.
