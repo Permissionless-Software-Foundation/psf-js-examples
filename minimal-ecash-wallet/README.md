@@ -15,3 +15,8 @@
 - Get token icons and other media associated with a token
 
 It is 'token aware' and can work with all eTokens, including NFTs. It can interface with Web 2 infrastructure like [FullStack.cash](https://fullstack.cash) or with the [Web 3 Cash Stack](https://cashstack.info) infrastructure.
+
+## Running Examples
+You can run each example script by entering its directory and running the JavaScript file with node.js. Example: if the file is named `create-wallet.js`, run it with this command: `node create-wallet.js`
+
+If you need to install node.js on your linux system, [here are the commands](https://gist.github.com/christroutner/a39f656850dc022b60f25c9663dd1cdd#install-nodejs).
