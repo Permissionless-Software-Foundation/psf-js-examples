@@ -20,3 +20,8 @@ It is 'token aware' and can work with all eTokens, including NFTs. It can interf
 You can run each example script by entering its directory and running the JavaScript file with node.js. Example: if the file is named `create-wallet.js`, run it with this command: `node create-wallet.js`
 
 If you need to install node.js on your linux system, [here are the commands](https://gist.github.com/christroutner/a39f656850dc022b60f25c9663dd1cdd#install-nodejs).
+
+If you are trying to start from the first time, here is the recommended path to take when running examples:
+- [create-wallet](./create-wallet) to create a wallet. Send it a few cents of BCH to enable the other examples.
+- [get-balance](./get-balance) to show the balance of the BCH in the wallet you just created and funded.
+- [send-bch](./send-bch) makes an on-chain transaction by sending BCH from the wallet you created in the first example, back to itself. It generates a TXID that you can browse in a block explorer.
