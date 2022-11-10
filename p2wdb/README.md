@@ -1,0 +1,2 @@
+# p2wdb
+[p2wdb](https://www.npmjs.com/package/p2wdb) is JavaScript npm library for reading from and writing to the [PSF](https://psfoundation.cash) pay-to-write database (P2WDB). To learn more about the P2WDB, check out the documentation at [P2WDB.com](https://p2wdb.com).
