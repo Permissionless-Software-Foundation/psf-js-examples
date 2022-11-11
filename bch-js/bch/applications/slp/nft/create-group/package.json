@@ -1,0 +1,15 @@
+{
+  "name": "create-group",
+  "version": "1.0.0",
+  "description": "Create a new Group Token",
+  "main": "create-group.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node create-group.js"
+  },
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@bitcoin.com>"
+  ],
+  "license": "MIT"
+}

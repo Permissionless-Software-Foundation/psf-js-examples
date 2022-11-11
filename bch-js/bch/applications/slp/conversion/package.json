@@ -1,0 +1,16 @@
+{
+  "name": "conversion",
+  "version": "1.0.0",
+  "description": "Convert between address formats",
+  "main": "conversion.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node conversion.js"
+  },
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@bitcoin.com>",
+    "James Cramer @ SLP"
+  ],
+  "license": "MIT"
+}

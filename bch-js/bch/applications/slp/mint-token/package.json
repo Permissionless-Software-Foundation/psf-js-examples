@@ -1,0 +1,28 @@
+{
+  "name": "mint-token",
+  "version": "1.0.0",
+  "description": "Mint additional SLP tokens",
+  "main": "mint-token.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node mint-token.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Permissionless-Software-Foundation/bch-js-examples.git"
+  },
+  "keywords": [
+    "slp-sdk",
+    "example"
+  ],
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
+  "contributors": [
+    "Gabriel Cardona <gabriel@bitcoin.com>",
+    "James Cramer @ SLP"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Permissionless-Software-Foundation/bch-js-examples/issues"
+  },
+  "homepage": "https://github.com/Permissionless-Software-Foundation/bch-js-examples#readme"
+}

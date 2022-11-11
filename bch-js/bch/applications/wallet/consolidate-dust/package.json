@@ -1,0 +1,12 @@
+{
+  "name": "consolidate-dust",
+  "version": "1.0.0",
+  "description": "Combine dust UTXOs",
+  "main": "consolidate-dust.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node consolidate-dust.js"
+  },
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
+  "license": "MIT"
+}

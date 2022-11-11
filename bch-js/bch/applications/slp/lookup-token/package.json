@@ -1,0 +1,24 @@
+{
+  "name": "lookup-token",
+  "version": "1.0.0",
+  "description": "Lookup token by id",
+  "main": "lookup-token.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node lookup-token.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Permissionless-Software-Foundation/bch-js-examples/slp-sdk.git"
+  },
+  "keywords": [
+    "slp-sdk",
+    "example"
+  ],
+  "author": "Gabriel Cardona <gabriel@bitcoin.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Permissionless-Software-Foundation/bch-js-examples/issues"
+  },
+  "homepage": "https://github.com/Permissionless-Software-Foundation/bch-js-examples#readme"
+}
