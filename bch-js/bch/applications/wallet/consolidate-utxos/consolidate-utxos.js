@@ -36,8 +36,12 @@ async function consolidateUtxos () {
     const data = await bchjs.Electrumx.utxo(SEND_ADDR)
     const utxos = data.utxos
 
+    let maxLen = utxos.length
+    console.log(`There are ${maxLen} UTXOs to consolidate.`)
+    if(maxLen > 30) maxLen = 30
+
     // Loop through each UTXO assigned to this address.
-    for (let i = 0; i < utxos.length; i++) {
+    for (let i = 0; i < maxLen; i++) {
       const thisUtxo = utxos[i]
 
       inputs.push(thisUtxo)
