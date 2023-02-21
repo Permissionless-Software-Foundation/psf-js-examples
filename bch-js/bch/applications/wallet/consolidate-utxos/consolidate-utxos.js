@@ -24,6 +24,7 @@ try {
 
 const SEND_ADDR = walletInfo.cashAddress
 const SEND_MNEMONIC = walletInfo.mnemonic
+const MAX_NUM_UTXOS = 100
 
 async function consolidateUtxos () {
   try {
@@ -38,7 +39,7 @@ async function consolidateUtxos () {
 
     let maxLen = utxos.length
     console.log(`There are ${maxLen} UTXOs to consolidate.`)
-    if(maxLen > 30) maxLen = 30
+    if(maxLen > MAX_NUM_UTXOS) maxLen = MAX_NUM_UTXOS
 
     // Loop through each UTXO assigned to this address.
     for (let i = 0; i < maxLen; i++) {
