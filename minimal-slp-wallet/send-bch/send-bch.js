@@ -15,7 +15,6 @@ async function start() {
     const wallet = new SlpWallet(walletData.mnemonic, {
       interface: 'consumer-api',
       restURL: 'https://free-bch.fullstack.cash'
-      // Alternative back-end servers: https://gist.github.com/christroutner/63c5513782181f8b8ea3eb89f7cadeb6
     })
     await wallet.initialize()
 
