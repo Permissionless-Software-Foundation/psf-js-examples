@@ -19,7 +19,7 @@
   "dependencies": {
     "@psf/bch-js": "6.8.0",
     "minimal-ecash-wallet": "1.1.6",
-    "minimal-slp-wallet": "5.12.0",
+    "minimal-slp-wallet": "5.13.2",
     "p2wdb": "2.2.10"
   }
 }
