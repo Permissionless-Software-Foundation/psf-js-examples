@@ -5,7 +5,7 @@
 */
 
 // CUSTOMIZE THESE GLOBAL VARIABLES FOR YOUR USE
-const WIF = 'Ky72RcsMytFtBzSmyS4XMJdCpXd4pdAWanmWwZJkANWX3oV4AqDY'
+const WIF = 'L1eYaneXDDXy8VDig4Arwe8wYHbhtsA5wuQvwsKwhaYeneoZuKG4'
 
 // Global npm libraries
 const SlpWallet = require('minimal-slp-wallet')
@@ -24,6 +24,9 @@ async function start() {
 
     const balance = await wallet.getBalance()
     console.log('balance: ', balance)
+
+    const utxos = await wallet.getUtxos()
+    console.log('# of UTXOs: ', utxos.bchUtxos.length)
 
   } catch(err) {
     console.error(err)
