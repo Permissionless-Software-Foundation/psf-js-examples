@@ -6,7 +6,7 @@ This repository contains JavaScript code examples to introduce common workflows 
 
 1. To run these examples, you need to first decide which JavaScript library you want to use:
 
-- [minimal-slp-wallet](https://www.npmjs.com/package/minimal-slp-wallet) - The best library for beginners. Has a simplified functions for common use cases. Can use both [ipfs-bch-wallet-consumer](https://github.com/Permissionless-Software-Foundation/ipfs-bch-wallet-consumer) and [psf-bch-api](https://github.com/Permissionless-Software-Foundation/psf-bch-api) back end APIs, in any access configuration.
+- [minimal-slp-wallet](https://www.npmjs.com/package/minimal-slp-wallet) - The best library for beginners. The focus is on simplified functions for common use cases. It can use both [ipfs-bch-wallet-consumer](https://github.com/Permissionless-Software-Foundation/ipfs-bch-wallet-consumer) and [psf-bch-api](https://github.com/Permissionless-Software-Foundation/psf-bch-api) back end APIs, in any access configuration.
 
 
 - [bch-js](https://www.npmjs.com/package/@psf/bch-js) - This is a ‘swiss army knife’ library for creating custom BCH transactions. It requires deep knowledge of the inner workings of Bitcoin to use. This library is for advanced users, and the library can only use an instance of [psf-bch-api](https://github.com/Permissionless-Software-Foundation/psf-bch-api). It can *not* use ipfs-bch-wallet-consumer as a back end service.
@@ -20,10 +20,19 @@ This repository contains JavaScript code examples to introduce common workflows 
 - [free-bch.fullstack.cash](https://free-bch.fullstack.cash/) - An instance of [ipfs-bch-wallet-consumer](https://github.com/Permissionless-Software-Foundation/ipfs-bch-wallet-consumer). Free, faster, but with no guarantee of uptime, since these APIs are provided by volunteers. [bch-js](https://www.npmjs.com/package/@psf/bch-js) can *not* use this service, but [minimal-slp-wallet](https://www.npmjs.com/package/minimal-slp-wallet) can. Great for prototyping a proof of concept application, while keeping costs low. Multiple instances of this service are available [here](https://consumers.psfoundation.info/consumers.json).
 
 
-- [x402.fullstack.cash](https://x402-bch.fullstack.cash/) - Fast, with reliable uptime. API calls are paid ala-cart with BCH, using the x402-bch protocol.
+- [x402.fullstack.cash](https://x402-bch.fullstack.cash/) - Fast, with reliable uptime. API calls are paid per-use with BCH, using the [x402-bch protocol](https://github.com/x402-bch/x402-bch).
 
 
-- [Cash Box](https://woodcashbox.com) or [private infrastructure](https://fullstack.cash/pricing) - If you own a Cash Box, run your own instance of [psf-bch-api](https://github.com/Permissionless-Software-Foundation/psf-bch-api), or pay for FullStack.cash to host private infrastructure for you, you can access that instance of [psf-bch-api](https://github.com/Permissionless-Software-Foundation/psf-bch-api) with a Basic Authentication Bearer Token. This allows the API to be publicly available, but only accessible to software that possess the Bearer Token.
+- [Cash Box](https://woodcashbox.com) or [private infrastructure](https://fullstack.cash/pricing) - If you own a [Cash Box](https://woodcashbox.com), run your own instance of [psf-bch-api](https://github.com/Permissionless-Software-Foundation/psf-bch-api), or pay for FullStack.cash to host private infrastructure for you, you can access that instance of [psf-bch-api](https://github.com/Permissionless-Software-Foundation/psf-bch-api) with a Basic Authentication Bearer Token. This allows the API to be publicly available, but only accessible to software that possess the Bearer Token. By default, there are no rate limits.
+
+
+## Examples
+
+Examples are separate by library (minimal-slp-wallet and bch-js). Within each library, there are *access* examples. These all contain the same example code: retrieving the balance for an address. They differ in how they access back-end API services. They provide an example of the different ways to instantiate the JS libraries, in order to authenticate with the different services during start-up of your application.
+
+- [minimal-slp-wallet examples](./minimal-slp-wallet/)
+- [bch-js](./bch-js/)
+
 
 
 

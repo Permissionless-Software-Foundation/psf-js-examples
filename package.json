@@ -2,7 +2,7 @@
   "name": "psf-js-examples",
   "version": "1.0.0",
   "description": "A collection of JavaScript code examples using PSF software",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/Permissionless-Software-Foundation/psf-js-examples#readme",
   "dependencies": {
-    "@psf/bch-js": "6.8.1",
-    "minimal-ecash-wallet": "1.1.6",
-    "minimal-slp-wallet": "5.13.3",
-    "p2wdb": "2.2.10"
+    "@psf/bch-js": "7.1.5",
+    "minimal-slp-wallet": "7.0.6"
   }
 }
