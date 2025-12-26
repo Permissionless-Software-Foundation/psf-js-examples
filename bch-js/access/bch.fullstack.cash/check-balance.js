@@ -1,6 +1,8 @@
 /*
   This example checks the balance of an address.
-  It uses bch.fullstack.cash as the back-end API service. This service is free with high uptime, but slow and heavily rate limited.
+  
+  It uses bch.fullstack.cash as the back-end API service. This service is free 
+  with high uptime, but slow and heavily rate limited.
 */
 
 // REST API servers.
