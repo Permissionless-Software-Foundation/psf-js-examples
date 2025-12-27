@@ -16,7 +16,7 @@ import BCHJS from '@psf/bch-js'
 // Add a WIF private key to pay for API calls.
 const bchjs = new BCHJS({ 
   restURL: API_SERVICE_URL,
-  bearerToken: 'test02'
+  bearerToken: 'test01'
 })
 
 // The address to check the balance of.
