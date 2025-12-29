@@ -14,13 +14,16 @@
 - Verify that a UTXO is unspent
 - Get token icons and other media associated with a token
 
-It is 'token aware' and can work with all SLP tokens, including NFTs. The [access directory](./access/) contains examples for interfacing with the different flavors of blockchain infrstructure.
+It is 'token aware' and can work with all SLP tokens, including NFTs.
 
 
 ## Running Examples
-You can run each example script by entering its directory and running the JavaScript file with node.js. Example: if the file is named `create-wallet.js`, run it with this command: `node create-wallet.js`
 
 You will need [node.js](https://nodejs.org/en) installed on your computer.
+
+The [access directory](./access/) contains examples for interfacing with the different flavors of blockchain infrastructure.
+
+You can run each example script by entering its directory and running the JavaScript file with node.js. Example: if the file is named `create-wallet.js`, run it with this command: `node create-wallet.js`
 
 If you are trying to start from the first time, here is the recommended path to take when running examples:
 - [create-wallet](./wallet/create-wallet) to create a wallet. Send it a few cents of BCH to enable the other examples.

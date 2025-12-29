@@ -38,5 +38,9 @@ Examples are separated by library (minimal-slp-wallet or bch-js). Within each li
 ## Other Resources
 
 The examples above can help JavaScript developers quickly build custom business applications. Check out these libraries for other uses cases:
+
+- We have a [Telegram channel](https://t.me/bch_js_toolkit) where you can chat with other developers using this software. There is also an AI tech support bot trained on all these code bases. You can ask it questions if you need help understanding any of the [Cash Stack](https://cashstack.info) software.
+
 - For developers who want an easy-to-hack command-line wallet, check out [psf-bch-wallet](https://github.com/Permissionless-Software-Foundation/psf-bch-wallet). Are fully-functional CLI wallet with lots of features. Built with minimal-slp-wallet.
+
 - For developers who need a web-based wallet, check out [bch-wallet-web3-spa](https://github.com/Permissionless-Software-Foundation/bch-wallet-web3-spa). [Live demo](https://wallet.psfoundation.info)
