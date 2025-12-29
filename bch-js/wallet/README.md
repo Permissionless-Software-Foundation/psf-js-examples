@@ -76,7 +76,9 @@ to
 - `const RECV_ADDR = 'YourBCHwalletHereInQuotes'`
 
 *NOTE:* the .js file is defaulted to sending 1000 satoshis. Edit this line:
-const SATOSHIS_TO_SEND = 1000
+
+- `const SATOSHIS_TO_SEND = 1000`
+
 to any number you wish, above 546, to change the amount of satoshis that will be
 sent to the receiving address you entered above.
 

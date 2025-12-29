@@ -8,7 +8,7 @@ const SIGNATURE =
 const MESSAGE = 'test'
 
 // REST API servers.
-const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
+const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
 
 // bch-js-examples require code from the main bch-js repo
 import BCHJS from '@psf/bch-js'

@@ -10,7 +10,7 @@ let RECV_ADDR = ''
 const SATOSHIS_TO_SEND = 1000
 
 // REST API servers.
-const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
+const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
 
 // bch-js-examples require code from the main bch-js repo
 import BCHJS from '@psf/bch-js'
