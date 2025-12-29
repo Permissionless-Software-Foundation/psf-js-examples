@@ -9,7 +9,7 @@ const TOKENQTY = 100 // The quantity of new tokens to mint.
 let TO_SLPADDR = '' // The address to send the new tokens.
 
 // REST API servers.
-const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
+const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
 
 // bch-js-examples require code from the main bch-js repo
 import BCHJS from '@psf/bch-js'

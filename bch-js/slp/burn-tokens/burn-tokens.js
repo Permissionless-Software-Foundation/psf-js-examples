@@ -8,7 +8,7 @@ const TOKENID =
   'dd2fc6e47bfef7c9cfef39bd1be86b3a263a1822736a0c7a0655a758c6ea1713'
 
 // REST API servers.
-const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
+const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
 
 // bch-js-examples require code from the main bch-js repo
 import BCHJS from '@psf/bch-js'

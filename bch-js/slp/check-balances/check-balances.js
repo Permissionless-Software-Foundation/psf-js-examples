@@ -7,7 +7,7 @@
 */
 
 // REST API servers.
-const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
+const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
 
 // bch-js-examples require code from the main bch-js repo
 import BCHJS from '@psf/bch-js'
@@ -67,7 +67,8 @@ async function getBalance () {
 
       console.log(JSON.stringify(tokens, null, 2))
     } catch (error) {
-      if (error.message === 'Address not found') console.log('No tokens found.')
+      console.log('error: ', error)
+      if (error.message.includes('Key not found in database')) console.log('No tokens found.')
       else console.log('Error: ', error)
     }
   } catch (err) {
