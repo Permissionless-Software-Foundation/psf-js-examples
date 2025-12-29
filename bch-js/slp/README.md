@@ -35,12 +35,14 @@ You can run each example script by entering its directory and executing `npm sta
 
 - [send-token](send-token) - Send tokens from your address to another address.
 
+- [lookup-token](lookup-token) - Lookup token information based on the token `id`.
+
 - [burn-tokens](burn-tokens) - Burn a specific amount of tokens.
 
 - [burn-all](burn-all) - Burn all tokens for an address by tokenId.
 
-- [lookup-token](lookup-token) - Lookup token information based on the token `id`.
-
-- [list-all-tokens](list-all-tokens) - List every token in existence.
-
 - [conversion](conversion) - Convert between address formats.
+
+## NFTs
+
+Check out the [nft](nft) directory for information about SLP non-fungible tokens.

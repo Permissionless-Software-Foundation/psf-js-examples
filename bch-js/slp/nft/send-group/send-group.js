@@ -5,8 +5,8 @@
 // CUSTOMIZE THESE VALUES FOR YOUR USE
 const TOKENQTY = 1
 const TOKENID =
-  '961c6a9f40da97c032b7249493a0bf70944696bbacfd94e831f58f0737e2e9be'
-let TO_SLPADDR = 'simpleledger:qrxnq2ta5fe3whyfsekfz648c48tzd8urspw8f3h07'
+  '1ce8e19b25ceab4b2c1b523a094715c25e81c2a21a0f9c546670353848547d2f'
+let TO_SLPADDR = ''
 
 // REST API servers.
 const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
@@ -194,7 +194,7 @@ async function sendGroupToken () {
     console.log(`Transaction ID: ${txidStr}`)
 
     console.log('Check the status of your transaction on this block explorer:')
-    console.log(`https://slp-explorer.salemkode.com/tx/${txidStr}`)
+    console.log(`https://explorer.tokentiger.com/transactions?txid=${txidStr}`)
   } catch (err) {
     console.error('Error in sendGroupToken: ', err)
     console.log(`Error message: ${err.message}`)

@@ -4,8 +4,8 @@
 
 // CUSTOMIZE THESE VALUES FOR YOUR USE
 const TOKENID =
-  'fb4b972328199e4538b93760ce4598b087ccd5c71e459c6384dc2ebc20b743a2'
-let TO_SLPADDR = 'simpleledger:qrxnq2ta5fe3whyfsekfz648c48tzd8urspw8f3h07'
+  'adb16bf13342b50cd0220fbb10a0a957367acf8ce7e0be5a79949b7bf3afe1ef'
+let TO_SLPADDR = ''
 
 // REST API servers.
 const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
@@ -193,7 +193,7 @@ async function sendChildToken () {
     console.log(`Transaction ID: ${txidStr}`)
 
     console.log('Check the status of your transaction on this block explorer:')
-    console.log(`https://slp-explorer.salemkode.com/tx/${txidStr}`)
+    console.log(`https://explorer.tokentiger.com/transactions?txid=${txidStr}`)
   } catch (err) {
     console.error('Error in sendToken: ', err)
     console.log(`Error message: ${err.message}`)

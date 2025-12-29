@@ -135,7 +135,7 @@ async function createNFT () {
     // Broadcast transation to the network
     const txidStr = await bchjs.RawTransactions.sendRawTransaction([hex])
     console.log('Check the status of your transaction on this block explorer:')
-    console.log(`https://slp-explorer.salemkode.com/tx/${txidStr}`)
+    console.log(`https://explorer.tokentiger.com/?tokenid=${txidStr}`)
   } catch (err) {
     console.error('Error in createToken: ', err)
   }

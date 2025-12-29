@@ -8,7 +8,7 @@
 
 // EDIT THESE VALUES FOR YOUR USE.
 const TOKENID =
-  '961c6a9f40da97c032b7249493a0bf70944696bbacfd94e831f58f0737e2e9be'
+  '1ce8e19b25ceab4b2c1b523a094715c25e81c2a21a0f9c546670353848547d2f'
 // const TO_SLPADDR = '' // The address to send the new tokens.
 
 // REST API servers.
@@ -116,7 +116,7 @@ async function createNFTChild () {
     // Generate SLP config object
     const configObj = {
       name: 'NFT Child',
-      ticker: 'NFT005',
+      ticker: 'NFT001',
       documentUrl: 'https://FullStack.cash'
     }
 
@@ -178,7 +178,7 @@ async function createNFTChild () {
     // Broadcast transation to the network
     const txidStr = await bchjs.RawTransactions.sendRawTransaction([hex])
     console.log('Check the status of your transaction on this block explorer:')
-    console.log(`https://slp-explorer.salemkode.com/tx/${txidStr}`)
+    console.log(`https://explorer.tokentiger.com/?tokenid=${txidStr}`)
   } catch (err) {
     console.error('Error in createNFTChild: ', err)
   }
