@@ -4,7 +4,7 @@ while in that folder directory (e.g. run "npm start" while in the
 applications/wallet/create-wallet directory)
 
 
-## Create Wallet
+## create-wallet
 
 The first action you should perform in the application/wallet directory
 should be in the [create-wallet](create-wallet) example. Run using: `node create-wallet.js`
@@ -30,7 +30,7 @@ addresses with a single mnemonic. Only the `wallet.json` file will be used by
 the other examples.
 
 
-## Check Balance
+## check-balance
 
 Once you send BCH to the address in your newly made `wallet.json`
 wallet file, you can
@@ -43,7 +43,7 @@ This will show you the current balance
 in the address in the `wallet.json` file.
 
 
-## Send All
+## send-all
 
 Once you have BCH (or tBCH) in your wallet, you can use the
 [send-all](send-all) example to send ALL of the BCH in your wallet to a single address.
@@ -61,7 +61,7 @@ to
 `const RECV_ADDR = "YourBCHwalletHereInQuotes"`
 
 
-## SEND BCH
+## send-bch.js
 
 Once you have BCH in your "wallet.json" address, you can use the function
 wallet/send-bch to send a specific amount of BCH from your "wallet.json" address
@@ -83,24 +83,31 @@ to any number you wish, above 546, to change the amount of satoshis that will be
 sent to the receiving address you entered above.
 
 
-##applications/wallet/send-WIF
+## send-wif.js
 
-Exactly the same as the above 'wallet/send-bch' function above, except it uses
-the WIF (Wallet Import Format) in place of the mnemonic in the "wallet.json"
+This is the same as the above 'send-bch' example above, except it uses
+the WIF (Wallet Import Format) private key in place of the mnemonic in the "wallet.json"
 file to send the BCH. This is just another way of signing the transaction
 as proof of ownership of the wallet and containing addresses.
-NOTE: the .js file has to be opened, and your receiving address has to be
+
+*NOTE*: the .js file has to be opened, and your receiving address has to be
 changed from:
-const RECV_ADDR = ``
+
+- `const RECV_ADDR = ''`
+
 to
-const RECV_ADDR = 'YourBCHwalletHereInQuotes'
-NOTE: the .js file is defaulted to sending 1000 satoshis. Edit this line:
-const SATOSHIS_TO_SEND = 1000
+
+- `const RECV_ADDR = 'YourBCHwalletHereInQuotes'`
+
+*NOTE:* the .js file is defaulted to sending 1000 satoshis. Edit this line:
+
+- `const SATOSHIS_TO_SEND = 1000`
+
 to any number you wish, above 546 satoshis, to send that amount of satoshis
 to the receiving address you entered above.
 
 
-##applications/wallet/consolidate-utxos
+## consolidate-utxos
 
 After having multiple transactions into and out of your "wallet.json" address,
 you may wish to combine all of the UTXOs into one single UTXO. This is done
