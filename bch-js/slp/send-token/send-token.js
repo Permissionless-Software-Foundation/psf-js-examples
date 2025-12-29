@@ -5,7 +5,7 @@
 // CUSTOMIZE THESE VALUES FOR YOUR USE
 const TOKENQTY = 10
 const TOKENID =
-  'f28ac3a87c3dc89f6d1c5256ca169de4112ef40aed2139d82384e861d5fe779b'
+  'fa4bccce732f9420f2542e23848630154480793b3200f819de2d6e7d40debb17'
 let TO_SLPADDR = ''
 
 // REST API servers.
@@ -194,7 +194,7 @@ async function sendToken () {
     console.log(`Transaction ID: ${txidStr}`)
 
     console.log('Check the status of your transaction on this block explorer:')
-    console.log(`https://explore.cash/mainnet/tx/${txidStr}`)
+    console.log(`https://explorer.tokentiger.com/transactions?txid=${txidStr}`)
   } catch (err) {
     console.error('Error in sendToken: ', err)
     console.log(`Error message: ${err.message}`)

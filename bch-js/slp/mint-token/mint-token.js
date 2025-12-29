@@ -4,7 +4,7 @@
 
 // EDIT THESE VALUES FOR YOUR USE.
 const TOKENID =
-  '98773910969bba301095e88bf997178a3aa753fa0147449d39da299c4f188bc4'
+  'fa4bccce732f9420f2542e23848630154480793b3200f819de2d6e7d40debb18'
 const TOKENQTY = 100 // The quantity of new tokens to mint.
 let TO_SLPADDR = '' // The address to send the new tokens.
 
@@ -43,7 +43,7 @@ async function mintToken () {
     // root seed buffer
     const rootSeed = await bchjs.Mnemonic.toSeed(mnemonic)
 
-    // master HDNode
+    // master HD Node
     const masterHDNode = bchjs.HDNode.fromSeed(rootSeed)
 
     // HDNode of BIP44 account
@@ -78,7 +78,7 @@ async function mintToken () {
 
       return false
     })
-    console.log(`batonUtxos: ${JSON.stringify(batonUtxos, null, 2)}`);
+    // console.log(`batonUtxos: ${JSON.stringify(batonUtxos, null, 2)}`);
 
     if (batonUtxos.length === 0) {
       throw new Error('No mint baton UTXOs for the specified token could be found.')
@@ -190,7 +190,7 @@ async function mintToken () {
     console.log(`Transaction ID: ${txidStr}`)
 
     console.log('Check the status of your transaction on this block explorer:')
-    console.log(`https://slp-explorer.salemkode.com/tx/${txidStr}`)
+    console.log(`https://explorer.tokentiger.com/transactions?txid=${txidStr}`)
   } catch (err) {
     console.error('Error in mintToken: ', err)
     console.log(`Error message: ${err.message}`)

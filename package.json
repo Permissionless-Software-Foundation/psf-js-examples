@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Permissionless-Software-Foundation/psf-js-examples#readme",
   "dependencies": {
-    "@psf/bch-js": "7.1.5",
+    "@psf/bch-js": "/home/trout/work/psf/code/api-dev/bch-js",
     "minimal-slp-wallet": "7.1.1"
   }
 }

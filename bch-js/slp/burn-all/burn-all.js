@@ -117,7 +117,7 @@ async function sendAll () {
     console.log(`Transaction ID: ${txid}`)
 
     console.log('Check the status of your transaction on this block explorer:')
-    console.log(`https://explorer.bitcoin.com/bch/tx/${txid}`)
+    console.log(`https://explorer.tokentiger.com/transactions?txid=${txid}`)
   } catch (err) {
     console.log('error: ', err)
   }

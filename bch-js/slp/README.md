@@ -30,15 +30,12 @@ You can run each example script by entering its directory and executing `npm sta
   [create-wallet](create-wallet) example first, and fund your wallet with a few
   cents of BCH first.
 
-- [create-nft](create-nft) - Create a new SLP
-[non-fungible token](https://coincentral.com/nfts-non-fungible-tokens/). Run the
-[create-wallet](create-wallet) example first, and fund your wallet with a few
-cents of BCH first.
-
 - [mint-token](mint-token) - Mint additional SLP tokens for an existing class
   controlled by your wallet.
 
 - [send-token](send-token) - Send tokens from your address to another address.
+
+- [burn-tokens](burn-tokens) - Burn a specific amount of tokens.
 
 - [burn-all](burn-all) - Burn all tokens for an address by tokenId.
 

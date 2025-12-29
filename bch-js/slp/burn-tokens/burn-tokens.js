@@ -5,7 +5,7 @@
 // CUSTOMIZE THESE VALUES FOR YOUR USE
 const TOKENQTY = 0.01
 const TOKENID =
-  'dd2fc6e47bfef7c9cfef39bd1be86b3a263a1822736a0c7a0655a758c6ea1713'
+  'fa4bccce732f9420f2542e23848630154480793b3200f819de2d6e7d40debb18'
 
 // REST API servers.
 const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
@@ -57,41 +57,30 @@ async function burnTokens () {
     // const slpAddress = bchjs.HDNode.toSLPAddress(change)
 
     // Get UTXOs held by this address.
-    const data = await bchjs.Electrumx.utxo(cashAddress)
-    const utxos = data.utxos
+    const utxos = await bchjs.Utxo.get(cashAddress)
     // console.log(`utxos: ${JSON.stringify(utxos, null, 2)}`)
 
-    if (utxos.length === 0) throw new Error('No UTXOs to spend! Exiting.')
+    const bchUtxos = utxos.bchUtxos
+    const slpUtxos = utxos.slpUtxos.type1.tokens
 
-    // Identify the SLP token UTXOs.
-    let tokenUtxos = await bchjs.SLP.Utils.tokenUtxoDetails(utxos)
-    // console.log(`tokenUtxos: ${JSON.stringify(tokenUtxos, null, 2)}`)
+    if (bchUtxos.length === 0) throw new Error('No BCH UTXOs to spend! Exiting.')
 
-    // Filter out the non-SLP token UTXOs.
-    const bchUtxos = utxos.filter((utxo, index) => {
-      const tokenUtxo = tokenUtxos[index]
-      if (!tokenUtxo.isValid) return true
+    if (slpUtxos.length === 0) throw new Error('No token UTXOs to spend! Exiting.')
+
+    // Filter out the token UTXOs that match the user-provided token ID.
+    const tokenUtxos = slpUtxos.filter((utxo, index) => {
+      if (
+        utxo && // UTXO is associated with a token.
+        utxo.tokenId === TOKENID
+      ) { return true }
+
       return false
     })
-    // console.log(`bchUTXOs: ${JSON.stringify(bchUtxos, null, 2)}`)
+    // console.log(`tokenUtxos: ${JSON.stringify(tokenUtxos, null, 2)}`)
 
     if (bchUtxos.length === 0) {
       throw new Error('Wallet does not have a BCH UTXO to pay miner fees.')
     }
-
-    // Filter out the token UTXOs that match the user-provided token ID.
-    tokenUtxos = tokenUtxos.filter((utxo, index) => {
-      if (
-        utxo && // UTXO is associated with a token.
-        utxo.tokenId === TOKENID && // UTXO matches the token ID.
-        utxo.utxoType === 'token' // UTXO is not a minting baton.
-      ) {
-        return true
-      }
-
-      return false
-    })
-    // console.log(`tokenUtxos: ${JSON.stringify(tokenUtxos, null, 2)}`);
 
     if (tokenUtxos.length === 0) {
       throw new Error('No token UTXOs for the specified token could be found.')
@@ -196,7 +185,7 @@ async function burnTokens () {
     console.log(`Transaction ID: ${txidStr}`)
 
     console.log('Check the status of your transaction on this block explorer:')
-    console.log(`https://explorer.bitcoin.com/bch/tx/${txidStr}`)
+    console.log(`https://explorer.tokentiger.com/transactions?txid=${txidStr}`)
   } catch (err) {
     console.error('Error in burnTokens: ', err)
     console.log(`Error message: ${err.message}`)

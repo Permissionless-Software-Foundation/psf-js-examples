@@ -4,7 +4,7 @@
 
 // EDIT THIS WITH THE TOKEN ID YOU WANT TO LOOK UP
 const TOKENID =
-  '8de4984472af772f144a74de473d6c21505a6d89686b57445c3e4fc7db3773b6'
+  'fa4bccce732f9420f2542e23848630154480793b3200f819de2d6e7d40debb18'
 
 // REST API servers.
 const BCHN_MAINNET = 'https://bch.fullstack.cash/v6/'
@@ -17,7 +17,7 @@ const bchjs = new BCHJS({ restURL: BCHN_MAINNET })
 
 async function lookupToken () {
   try {
-    const properties = await bchjs.SLP.Utils.list(TOKENID)
+    const properties = await bchjs.PsfSlpIndexer.getTokenData(TOKENID)
     console.log(properties)
   } catch (err) {
     console.error('Error in getTokenInfo: ', err)

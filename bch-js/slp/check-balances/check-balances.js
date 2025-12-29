@@ -67,7 +67,7 @@ async function getBalance () {
 
       console.log(JSON.stringify(tokens, null, 2))
     } catch (error) {
-      console.log('error: ', error)
+      // console.log('error: ', error)
       if (error.message.includes('Key not found in database')) console.log('No tokens found.')
       else console.log('Error: ', error)
     }
