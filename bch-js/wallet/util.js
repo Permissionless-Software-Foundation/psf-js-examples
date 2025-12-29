@@ -12,4 +12,4 @@ function transactionStatus (transactionInput, network) {
 }
 
 // export modules
-module.exports.transactionStatus = transactionStatus
+export { transactionStatus }

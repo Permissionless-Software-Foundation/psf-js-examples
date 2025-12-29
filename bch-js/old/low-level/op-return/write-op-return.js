@@ -6,13 +6,22 @@
 // Customize the message you want to send
 const MESSAGE = 'BURN abcdef'
 
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
 const bchjs = new BCHJS()
 
 // Open the wallet generated with create-wallet.
 let walletInfo
 try {
-  walletInfo = require('../../applications/wallet/create-wallet/wallet.json')
+  const walletPath = join(__dirname, '../../applications/wallet/create-wallet/wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  walletInfo = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open wallet.json. Generate a wallet with create-wallet first.'

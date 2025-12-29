@@ -15,12 +15,20 @@
 const NUM_ADDR_TO_SCAN = 60
 
 // Public npm libraries
-const BchWallet = require('minimal-slp-wallet/index')
+import BchWallet from 'minimal-slp-wallet/index.js'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // Open the wallet generated with create-wallet.
 let walletInfo
 try {
-  walletInfo = require('../create-wallet/wallet.json')
+  const walletPath = join(__dirname, '../create-wallet/wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  walletInfo = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open wallet.json. Generate a wallet with create-wallet first.'

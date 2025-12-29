@@ -6,19 +6,28 @@
 const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 
 // bch-js-examples require code from the main bch-js repo
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
+import bitcoinfilesNode from 'bitcoinfiles-node'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // Instantiate bch-js based on the network.
 const bchjs = new BCHJS({ restURL: BCHN_MAINNET })
 
-const Bfp = require('bitcoinfiles-node').bfp
+const Bfp = bitcoinfilesNode.bfp
 
 const bfp = new Bfp(bchjs, 'mainnet')
 
 // Open the wallet generated with create-wallet.
 let walletInfo
 try {
-  walletInfo = require('../../wallet/create-wallet/wallet.json')
+  const walletPath = join(__dirname, '../../wallet/create-wallet/wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  walletInfo = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open wallet.json. Generate a wallet with create-wallet first.'

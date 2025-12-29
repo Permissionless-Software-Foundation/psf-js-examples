@@ -10,7 +10,7 @@ const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 // const ABC_MAINNET = 'https://abc.fullstack.cash/v5/'
 const TESTNET3 = 'https://testnet3.fullstack.cash/v5/'
 
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
 
 // Instantiate bch-js based on the network.
 let bchjs

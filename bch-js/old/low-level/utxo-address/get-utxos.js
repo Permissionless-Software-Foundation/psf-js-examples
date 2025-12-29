@@ -6,7 +6,13 @@
 // REST API servers.
 const MAINNET_API_FREE = 'https://free-main.fullstack.cash/v5/'
 
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // Instantiate bch-js based on the network.
 const bchjs = new BCHJS({ restURL: MAINNET_API_FREE })
@@ -14,7 +20,9 @@ const bchjs = new BCHJS({ restURL: MAINNET_API_FREE })
 // Open the wallet generated with create-wallet.
 let walletInfo
 try {
-  walletInfo = require('../../applications/wallet/create-wallet/wallet.json')
+  const walletPath = join(__dirname, '../../applications/wallet/create-wallet/wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  walletInfo = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open wallet.json. Generate a wallet with create-wallet first.'

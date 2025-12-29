@@ -7,20 +7,26 @@
 const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 
 // bch-js-examples require code from the main bch-js repo
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
+import AppUtils from './util.js'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // Instantiate bch-js based on the network.
 const bchjs = new BCHJS({ restURL: BCHN_MAINNET })
 
-const AppUtils = require('./util')
 const appUtils = new AppUtils()
-
-const fs = require('fs')
 
 // Open the Seller's wallet generated with create-wallets.
 let sellerWallet
 try {
-  sellerWallet = require('../create-wallets/seller-wallet.json')
+  const walletPath = join(__dirname, '../create-wallets/seller-wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  sellerWallet = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open seller-wallet.json. Generate wallets with create-wallets first.'
@@ -31,7 +37,9 @@ try {
 // Open the Buyer's wallet generated with create-wallets.
 let buyerWallet
 try {
-  buyerWallet = require('../create-wallets/buyer-wallet.json')
+  const walletPath = join(__dirname, '../create-wallets/buyer-wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  buyerWallet = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open buyer-wallet.json. Generate wallets with create-wallets first.'
@@ -49,7 +57,9 @@ const buyerSLP = bchjs.SLP.Address.toSLPAddress(buyerAddr)
 // Open the sell signal information generated with step1-generate-signal.js
 let offerMeta
 try {
-  offerMeta = require('./signal.json')
+  const signalPath = join(__dirname, './signal.json')
+  const signalData = fs.readFileSync(signalPath, 'utf8')
+  offerMeta = JSON.parse(signalData)
 } catch (err) {
   console.log(
     'Could not open signal.json. Generate signal information with step1-generate-signal.js first.'

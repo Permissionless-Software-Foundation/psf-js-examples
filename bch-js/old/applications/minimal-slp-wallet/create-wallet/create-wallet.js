@@ -2,8 +2,8 @@
   Create a new BCH wallet using minimal-slp-wallet.
 */
 
-const BchWallet = require('minimal-slp-wallet/index')
-const fs = require('fs')
+import BchWallet from 'minimal-slp-wallet/index.js'
+import fs from 'fs'
 
 async function createWallet () {
   try {

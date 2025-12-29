@@ -1,4 +1,4 @@
-const util = require('util')
+import util from 'util'
 util.inspect.defaultOptions = {
   showHidden: true,
   colors: true,
@@ -14,7 +14,7 @@ const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 const TESTNET3 = 'https://testnet3.fullstack.cash/v5/'
 
 // bch-js-examples require code from the main bch-js repo
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
 
 // Instantiate bch-js based on the network.
 let bchjs
@@ -159,4 +159,4 @@ class Util {
   }
 }
 
-module.exports = Util
+export default Util

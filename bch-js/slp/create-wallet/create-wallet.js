@@ -7,12 +7,11 @@
 const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 
 // bch-js-examples require code from the main bch-js repo
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
+import fs from 'fs'
 
 // Instantiate bch-js based on the network.
 const bchjs = new BCHJS({ restURL: BCHN_MAINNET })
-
-const fs = require('fs')
 
 async function createWallet () {
   const lang = 'english'

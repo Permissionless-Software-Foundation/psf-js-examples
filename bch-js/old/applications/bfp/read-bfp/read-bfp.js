@@ -10,12 +10,13 @@ const bfpHash =
 const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 
 // bch-js-examples require code from the main bch-js repo
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
+import bitcoinfilesNode from 'bitcoinfiles-node'
 
 // Instantiate bch-js based on the network.
 const bchjs = new BCHJS({ restURL: BCHN_MAINNET })
 
-const Bfp = require('bitcoinfiles-node').bfp
+const Bfp = bitcoinfilesNode.bfp
 
 const bfp = new Bfp(bchjs, 'mainnet', 'https://bchd.greyh.at:8335')
 

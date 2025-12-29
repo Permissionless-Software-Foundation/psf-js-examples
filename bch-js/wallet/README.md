@@ -3,38 +3,11 @@ To run any application in the applications/wallet directory, simply enter:
 while in that folder directory (e.g. run "npm start" while in the
 applications/wallet/create-wallet directory)
 
-## Testnet
-All of the .js files in the applications/wallet directory are set to the
-"mainnet" network. For wallet testing purposes, by using the testnet network,
-change the following line of code in EACH AND EVERY .js file in the
-applications/wallet directories:
-
-`const NETWORK = 'mainnet'`
-
-should be changed to:
-
-`const NETWORK = 'testnet'`
-
-If you wish to fund your newly created **testnet** wallet,
-you can go to the [testnet faucet](https://developer.bitcoin.com/faucets/bch)
-and enter your BCH testnet (tBCH) wallet address (please use the address located
-in your "wallet.json" file, explained further on). You will receive a small amount
-of tBCH to use for any testing purposes that you wish.
-It is also good form to return any unused tBCH to the faucet, their wallet being:
-bchtest:qqmd9unmhkpx4pkmr6fkrr8rm6y77vckjvqe8aey35
-
-If you already have BCH, you can test these functions without having to change
-any of the code from 'mainnet' to 'testnet'. A simple 1000 satoshi (0.00001
-BCH) transaction is enough to fund the "wallet.json" address for testing transactions.
-
-
-The following are steps to follow when using these .js files
-
 
 ## Create Wallet
 
 The first action you should perform in the application/wallet directory
-should be in the [create-wallet](create-wallet) example. Run using: `npm start`
+should be in the [create-wallet](create-wallet) example. Run using: `node create-wallet.js`
 
 A new `wallet-info.txt` and `wallet.json` file will be created for you.
 
@@ -59,12 +32,12 @@ the other examples.
 
 ## Check Balance
 
-Once you send BCH (or tBCH) to the address in your newly made `wallet.json`
+Once you send BCH to the address in your newly made `wallet.json`
 wallet file, you can
 use the [check-balance](check-balance) example, to update your wallet with the network to
 confirm that the coins sent have successfully reached your wallet.
 
-Again, run the example by running: `npm start`
+Run the example by running: `npm check-balance.js`
 
 This will show you the current balance
 in the address in the `wallet.json` file.
@@ -90,16 +63,19 @@ to
 
 ## SEND BCH
 
-Once you have BCH (or tBCH) in your "wallet.json" address, you can use the function
+Once you have BCH in your "wallet.json" address, you can use the function
 wallet/send-bch to send a specific amount of BCH from your "wallet.json" address
 to any address of your choosing.
 NOTE: the .js file has to be opened, and your receiving address has to be
 changed from:
-const RECV_ADDR = ``
+
+- `const RECV_ADDR = ''`
+
 to
-const RECV_ADDR = 'YourBCHwalletHereInQuotes'
-#NOTE:
-the .js file is defaulted to sending 1000 satoshis. Edit this line:
+
+- `const RECV_ADDR = 'YourBCHwalletHereInQuotes'`
+
+*NOTE:* the .js file is defaulted to sending 1000 satoshis. Edit this line:
 const SATOSHIS_TO_SEND = 1000
 to any number you wish, above 546, to change the amount of satoshis that will be
 sent to the receiving address you entered above.

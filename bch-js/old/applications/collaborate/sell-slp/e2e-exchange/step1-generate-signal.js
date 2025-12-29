@@ -10,15 +10,22 @@ const tokenId =
 // number of satoshis to buy 1 whole token.
 const exchangeRate = 60000
 
-const AppUtils = require('./util')
-const appUtils = new AppUtils()
+import AppUtils from './util.js'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 
-const fs = require('fs')
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const appUtils = new AppUtils()
 
 // Open the offering part wallet generated with create-wallets.
 let sellerWallet
 try {
-  sellerWallet = require('../create-wallets/seller-wallet.json')
+  const walletPath = join(__dirname, '../create-wallets/seller-wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  sellerWallet = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open seller-wallet.json. Generate wallets with create-wallets first.'

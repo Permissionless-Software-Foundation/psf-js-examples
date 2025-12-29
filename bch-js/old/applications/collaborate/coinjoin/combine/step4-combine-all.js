@@ -6,25 +6,35 @@
 const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 
 // bch-js-examples require code from the main bch-js repo
-const BCHJS = require('@psf/bch-js')
-const Bitcoin = require('bitcoincashjs-lib')
+import BCHJS from '@psf/bch-js'
+import Bitcoin from 'bitcoincashjs-lib'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // Instantiate bch-js based on the network.
 const bchjs = new BCHJS({ restURL: BCHN_MAINNET })
 
-// const fs = require('fs')
-
 // Open the all signed tx information generated with step3-sign-own-tx.js
 let signedInputTxs
 try {
+  const tx0Path = join(__dirname, './signed_tx_0.json')
+  const tx1Path = join(__dirname, './signed_tx_1.json')
+  const tx2Path = join(__dirname, './signed_tx_2.json')
+  const tx0Data = fs.readFileSync(tx0Path, 'utf8')
+  const tx1Data = fs.readFileSync(tx1Path, 'utf8')
+  const tx2Data = fs.readFileSync(tx2Path, 'utf8')
   signedInputTxs = [
-    require('./signed_tx_0.json'),
-    require('./signed_tx_1.json'),
-    require('./signed_tx_2.json')
+    JSON.parse(tx0Data),
+    JSON.parse(tx1Data),
+    JSON.parse(tx2Data)
   ]
 } catch (err) {
   console.log(
-    'Could not open unsigned_tx.json. Generate tx information with step2-unsigned-tx.js first.'
+    'Could not open signed tx files. Generate tx information with step3-sign-own-tx.js first.'
   )
   process.exit(0)
 }

@@ -9,17 +9,23 @@ const paymentAmount = 1000
 const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 
 // bch-js-examples require code from the main bch-js repo
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // Instantiate bch-js based on the network.
 const bchjs = new BCHJS({ restURL: BCHN_MAINNET })
 
-const fs = require('fs')
-
 // Open the combined inputs information generated with step1-combine-inputs.js
 let combinedInputs
 try {
-  combinedInputs = require('./combined_inputs.json')
+  const inputsPath = join(__dirname, './combined_inputs.json')
+  const inputsData = fs.readFileSync(inputsPath, 'utf8')
+  combinedInputs = JSON.parse(inputsData)
 } catch (err) {
   console.log(
     'Could not open combined_inputs.json. Generate inputs information with step1-combine-inputs.js first.'

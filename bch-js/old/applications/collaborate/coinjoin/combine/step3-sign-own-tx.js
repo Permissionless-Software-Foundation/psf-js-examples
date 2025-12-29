@@ -2,23 +2,29 @@
   Sign own inputs from the combined tx
 */
 
-const Bitcoin = require('bitcoincashjs-lib')
+import Bitcoin from 'bitcoincashjs-lib'
 
 // REST API servers.
 const BCHN_MAINNET = 'https://bchn.fullstack.cash/v5/'
 
 // bch-js-examples require code from the main bch-js repo
-const BCHJS = require('@psf/bch-js')
+import BCHJS from '@psf/bch-js'
+import fs from 'fs'
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // Instantiate bch-js based on the network.
 const bchjs = new BCHJS({ restURL: BCHN_MAINNET })
 
-const fs = require('fs')
-
 // Open Alice's wallet generated with create-wallets.
 let aliceWallet
 try {
-  aliceWallet = require('../create-wallets/alice-wallet.json')
+  const walletPath = join(__dirname, '../create-wallets/alice-wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  aliceWallet = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open alice-wallet.json. Generate wallets with create-wallets first.'
@@ -29,7 +35,9 @@ try {
 // Open Bob's wallet generated with create-wallets.
 let bobWallet
 try {
-  bobWallet = require('../create-wallets/bob-wallet.json')
+  const walletPath = join(__dirname, '../create-wallets/bob-wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  bobWallet = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open bob-wallet.json. Generate wallets with create-wallets first.'
@@ -40,7 +48,9 @@ try {
 // Open Sam's wallet generated with create-wallets.
 let samWallet
 try {
-  samWallet = require('../create-wallets/sam-wallet.json')
+  const walletPath = join(__dirname, '../create-wallets/sam-wallet.json')
+  const walletData = fs.readFileSync(walletPath, 'utf8')
+  samWallet = JSON.parse(walletData)
 } catch (err) {
   console.log(
     'Could not open sam-wallet.json. Generate wallets with create-wallets first.'
@@ -59,7 +69,9 @@ const samWIF = samWallet.WIF
 // Open the combined inputs information generated with step1-combine-inputs.js
 let combinedInputs
 try {
-  combinedInputs = require('./combined_inputs.json')
+  const inputsPath = join(__dirname, './combined_inputs.json')
+  const inputsData = fs.readFileSync(inputsPath, 'utf8')
+  combinedInputs = JSON.parse(inputsData)
 } catch (err) {
   console.log(
     'Could not open combined_inputs.json. Generate inputs information with step1-combine-inputs.js first.'
@@ -70,7 +82,9 @@ try {
 // Open the unsigned tx information generated with step2-unsigned-tx.js
 let unsignedTx
 try {
-  unsignedTx = require('./unsigned_tx.json')
+  const txPath = join(__dirname, './unsigned_tx.json')
+  const txData = fs.readFileSync(txPath, 'utf8')
+  unsignedTx = JSON.parse(txData)
 } catch (err) {
   console.log(
     'Could not open unsigned_tx.json. Generate tx information with step2-unsigned-tx.js first.'
