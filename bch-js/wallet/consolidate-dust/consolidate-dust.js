@@ -11,7 +11,6 @@ import BCHJS from '@psf/bch-js'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
-import { transactionStatus } from '../util.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -119,7 +118,7 @@ async function consolidateDust () {
 
     console.log(`Transaction ID: ${broadcast}`)
     console.log('Check the status of your transaction on this block explorer:')
-    transactionStatus(broadcast, 'mainnet')
+    console.log(`https://explorer.bitcoin.com/bch/tx/${broadcast}`)
   } catch (err) {
     console.log('error: ', err)
   }

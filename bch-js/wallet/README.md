@@ -109,31 +109,20 @@ to the receiving address you entered above.
 
 ## consolidate-utxos
 
-After having multiple transactions into and out of your "wallet.json" address,
-you may wish to combine all of the UTXOs into one single UTXO. This is done
-using 'wallet/consolidate-utxo's, exactly similar as if you used "wallet/send-all"
-to yourself in the above 'wallet/send-all' .js file. Doing this can combine
-dozens of UTXOs into a single UTXO. Ran by running:
-"npm start"
+After having multiple transactions into your wallet.json address,
+you may wish to combine all of the UTXOs into one single UTXO. This
+reduces API calls and improves the user experience when using a wallet.
+
+The Consolidate UTXOs example is similar to the send-all example, but
+instead of spending the largest UTXO, it's spending all UTXOs and sending
+the new UTXO your wallet.json address.
 
 
-##applications/wallet/consolidate-dust
+## consolidate-dust
 
-Similar to 'wallet/consolidate-utxos', however this .js file concerns itself
+This example is similar to the consolidate-utxos example, however this example is concerned
 with satoshi amounts smaller than 546 satoshis (the cut-off limit for "dust").
-The transaction will happen if ALL of the COMBINED UTXOs have satoshi values
-individually less than 546, but if combined together, are greater than 546
+The transaction will combine all UTXOs that have satoshi values less than 546, but if combined together, are greater than 546
 satoshis. Should the total combined utxos not exceed 546 satoshis in total,
 then there will be an error message of "insufficient funds".
 
-##applications/util.js
-
-Simple script to log to the console the transaction ID on the BCH or tBCH blockchain
-either
-[BCH](https://explorer.bitcoin.com/bch/tx/)
-or
-[tBCH](https://explorer.bitcoin.com/tbch/tx)
-depending on if in the .js files above has
-NETWORK = 'mainnet'
-or
-NETWORK = 'testnet'
