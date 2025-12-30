@@ -7,10 +7,10 @@
 const TXID = 'b4ad5678644f889d4ae6145e1f56a0a1abde3efbafc800c445656a4508642754'
 
 // Global npm libraries
-const SlpWallet = require('minimal-slp-wallet')
+import SlpWallet from 'minimal-slp-wallet'
 
 // Open the wallet created with the create-wallet example.
-// const walletData = require('../create-wallet/wallet.json')
+// import walletData from '../create-wallet/wallet.json' with { type: 'json' }
 
 async function start() {
   try {

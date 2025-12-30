@@ -8,7 +8,7 @@
 const WIF = 'L1eYaneXDDXy8VDig4Arwe8wYHbhtsA5wuQvwsKwhaYeneoZuKG4'
 
 // Global npm libraries
-const SlpWallet = require('minimal-slp-wallet')
+import SlpWallet from 'minimal-slp-wallet'
 
 async function start() {
   try {

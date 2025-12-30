@@ -17,7 +17,7 @@
 */
 
 // Global npm libraries
-const SlpWallet = require('minimal-slp-wallet')
+import SlpWallet from 'minimal-slp-wallet'
 
 // Edit this token ID for the token you who icon you want to retrieve.
 const TOKEN_ID = '4540a1abe8fc1cdcd92c199c454e6f67391e312de11d7b17f4f0ef3dcaf11e25'

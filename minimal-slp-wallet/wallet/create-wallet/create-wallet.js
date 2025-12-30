@@ -4,8 +4,8 @@
 */
 
 // Global npm libraries
-const SlpWallet = require('minimal-slp-wallet')
-const fs = require('fs')
+import SlpWallet from 'minimal-slp-wallet'
+import fs from 'fs'
 
 async function start() {
   try {

@@ -4,10 +4,10 @@
 */
 
 // Global npm libraries
-const SlpWallet = require('minimal-slp-wallet')
+import SlpWallet from 'minimal-slp-wallet'
 
 // Open the wallet created with the create-wallet example.
-const walletData = require('../create-wallet/wallet.json')
+import walletData from '../create-wallet/wallet.json' with { type: 'json' }
 
 
 async function start() {
